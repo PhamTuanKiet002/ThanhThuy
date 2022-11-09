@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Danh sách lớp</h1>
+    <a href="form-add"><button>Add class</button></a><br><br>
+    <table border="1">
+      <tr>
+      <th>ID</th>
+      <th>Phone</th>
+      <th>Password</th>
+      <th>TypeRegister</th>
+      <th>Fullname</th>
+      <th>TypeUser</th>
+      <th>IdProvince</th>
+      <th>ACTION</th>
+      </tr>
+ <!-- ejseach -->
+      <% lops.forEach(item => { %>
+   <!-- <tr>
+      <td>  ejsout  </td>
+     </tr> -->
+
+       <tr>
+        <td><%= item._id %> </td>
+        <td><%= item.Phone %> </td>
+        <td><%= item.Password %> </td>
+        <td><%= item.TypeRegister %> </td>
+        <td><%= item.Fullname %> </td>
+        <td><%= item.TypeUser %> </td>
+        <td><%= item.IdProvince %> </td>
+        <td><a href="/form-update/<%= item._id %>">Update</a>||<a href="/form-delete/<%= item._id %>">Delete</a></td>
+       </tr>
+      <% }) %>
+    </table>
+  </body>
+
+</html>
